@@ -1,5 +1,6 @@
 package com.iesb.project.stockcontrol.stockcontrol.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -20,6 +21,10 @@ public class CompanyEntity {
 
     @Column(name = "name",nullable = false)
     private String name;
+
+    @JsonIgnore//Quando for serealizar para o formato json ignora essa lista, senao vai fica em um loop circular
+    @Embedded //Classe incorporada
+    private AddressEntity address;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "company_product",
