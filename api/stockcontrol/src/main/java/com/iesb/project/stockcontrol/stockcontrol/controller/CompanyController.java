@@ -1,6 +1,7 @@
 package com.iesb.project.stockcontrol.stockcontrol.controller;
 
 import com.iesb.project.stockcontrol.stockcontrol.dto.CompanyDTO;
+import com.iesb.project.stockcontrol.stockcontrol.model.CompanyEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,23 +13,23 @@ import java.util.List;
 public class CompanyController {
 
     @GetMapping
-    public List<CompanyDTO> list(){
+    public List<CompanyEntity> list(){
         return null;
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CompanyDTO> search(@PathVariable Long id){
+    public ResponseEntity<CompanyEntity> search(@PathVariable Long id){
         return null;
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CompanyDTO add(@RequestBody CompanyDTO company){
+    public CompanyDTO add(@RequestBody CompanyEntity company){
         return null;
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CompanyDTO> update(@PathVariable Long id,@RequestBody CompanyDTO company){
+    public ResponseEntity<CompanyEntity> update(@PathVariable Long id,@RequestBody CompanyEntity company){
         return null;
     }
 

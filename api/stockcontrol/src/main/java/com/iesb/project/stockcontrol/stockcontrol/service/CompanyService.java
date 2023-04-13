@@ -16,14 +16,14 @@ public class CompanyService {
 
     private CompanyEntity companySaved = new CompanyEntity();
 
-    public List<CompanyDTO> list(){
+    public List<CompanyEntity> list(){
         repository.findAll();
         return null;
     }
 
-    public CompanyDTO save(CompanyDTO company){
+    public CompanyEntity save(CompanyEntity company){
         //DTO -> Entity
-        repository.save(companySaved);
+        repository.save(company);
         return null;
     }
 

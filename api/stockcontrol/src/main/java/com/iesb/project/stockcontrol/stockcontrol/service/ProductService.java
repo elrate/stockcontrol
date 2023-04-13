@@ -16,14 +16,14 @@ public class ProductService {
 
     private ProductEntity productSaved = new ProductEntity();
 
-    public List<ProductDTO> list(){
+    public List<ProductEntity> list(){
         repository.findAll();
         return null;
     }
 
-    public ProductDTO save(ProductDTO product){
+    public ProductEntity save(ProductEntity product){
         //DTO -> Entity
-        repository.save(productSaved);
+        repository.save(product);
         return null;
     }
 

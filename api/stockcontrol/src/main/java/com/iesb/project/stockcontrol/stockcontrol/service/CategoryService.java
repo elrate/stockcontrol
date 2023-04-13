@@ -14,15 +14,15 @@ public class CategoryService {
     @Autowired
     private CategoryRepository repository;
 
-    public List<CategoryDTO> list(){
-        repository.findAll();
+    public CategoryEntity search(Long id){
+        repository.findById(id);
         return null;
     }
 
-    public CategoryDTO save(CategoryDTO category){
-        CategoryEntity categorySaved = new CategoryEntity();
+    public CategoryEntity save(CategoryEntity category){
+        //CategoryEntity categorySaved = new CategoryEntity();
         //DTO -> Entity
-        repository.save(categorySaved);
+        repository.save(category);
         return null;
     }
 }

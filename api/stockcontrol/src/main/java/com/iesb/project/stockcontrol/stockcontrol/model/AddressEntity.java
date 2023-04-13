@@ -11,4 +11,13 @@ public class AddressEntity {
     @Column(name="address_zip_code")
     private String zipCode;
 
+    @Column(name="address_street")
+    private String street;
+
+    @Column(name="address_city")
+    private String city;
+
+    @Column(name="address_state")
+    private String state;
+
 }

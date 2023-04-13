@@ -1,6 +1,9 @@
 package com.iesb.project.stockcontrol.stockcontrol.controller;
 
 import com.iesb.project.stockcontrol.stockcontrol.dto.ProductDTO;
+import com.iesb.project.stockcontrol.stockcontrol.model.ProductEntity;
+import com.iesb.project.stockcontrol.stockcontrol.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,24 +14,27 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
+    @Autowired
+    private ProductService service;
+
     @GetMapping
-    public List<ProductDTO> list(){
+    public List<ProductEntity> list(){
         return null;
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProductDTO> search(@PathVariable Long id){
+    public ResponseEntity<ProductEntity> search(@PathVariable Long id){
         return null;
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ProductDTO add(@RequestBody ProductDTO product){
+    public ProductEntity add(@RequestBody ProductEntity product){
         return null;
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ProductDTO> update(@PathVariable Long id,@RequestBody ProductDTO product){
+    public ResponseEntity<ProductEntity> update(@PathVariable Long id,@RequestBody ProductEntity product){
         return null;
     }
 
