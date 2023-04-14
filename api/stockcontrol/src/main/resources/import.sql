@@ -1,16 +1,16 @@
-CREATE TABLE category (
+CREATE TABLE if not exists category (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE product (
+CREATE TABLE if not exists product (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     validity DATE,
     manufacture DATE NOT NULL
 );
 
-CREATE TABLE product_category (
+CREATE TABLE if not exists product_category (
     product_id BIGINT,
     category_id BIGINT,
     PRIMARY KEY (product_id, category_id),
@@ -18,7 +18,7 @@ CREATE TABLE product_category (
     FOREIGN KEY (category_id) REFERENCES category (id)
 );
 
-CREATE TABLE company (
+CREATE TABLE if not exists company (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     address_street VARCHAR(255) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE company (
     address_zip_code VARCHAR(10) NOT NULL
 );
 
-CREATE TABLE company_product (
+CREATE TABLE if not exists company_product (
     company_id BIGINT,
     product_id BIGINT,
     quantity INTEGER NOT NULL,
@@ -48,4 +48,6 @@ INSERT INTO product_category (product_id, category_id) VALUES (1, 3);
 
 INSERT INTO company (name, address_zip_code, address_street, address_city, address_state) VALUES ('Empresa A','12345-678','Rua A', 'Cidade A', 'Estado A');
 
-INSERT INTO company_product (company_id, product_id, quantity) VALUES (1, 1, 1);
+DELETE FROM company_product;
+INSERT INTO company_product (company_id, product_id, quantity) VALUES (1, 1, 1000);
+

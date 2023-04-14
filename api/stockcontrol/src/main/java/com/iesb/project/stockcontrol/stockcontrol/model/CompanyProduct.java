@@ -23,6 +23,6 @@ public class CompanyProduct implements Serializable {
     @JoinColumn(name = "company_id")
     private CompanyEntity company;
 
-    @JoinColumn(name = "quantity")
-    private Integer quantity;
+    @Column(name = "quantity", nullable = false, columnDefinition = "int default 0")
+    private Integer quantity = 0;
 }
