@@ -1,8 +1,10 @@
 package com.iesb.project.stockcontrol.stockcontrol.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.util.*;
 
@@ -10,6 +12,8 @@ import java.util.*;
 @Table(name="product")
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProductEntity {
     @Id
     @Column(name = "id",nullable = false)
@@ -25,6 +29,9 @@ public class ProductEntity {
 
     @Column(name = "manufacture",nullable = false)
     private Date manufacture;
+
+    @Column(name = "brand",nullable = true)
+    private String brand;
 
     @ManyToMany(mappedBy = "products", fetch = FetchType.LAZY)
     private Set<CompanyEntity> companies = new HashSet<>();
